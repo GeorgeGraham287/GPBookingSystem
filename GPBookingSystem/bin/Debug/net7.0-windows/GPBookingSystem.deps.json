@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "GPBookingSystem/1.0.0": {
+        "runtime": {
+          "GPBookingSystem.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GPBookingSystem/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
