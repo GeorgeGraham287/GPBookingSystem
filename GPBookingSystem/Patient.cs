@@ -10,10 +10,15 @@ namespace GPBookingSystem
 {
     public class Patient
     {
+
         public string FirstName { get; set; } = "undefined";
         public string LastName { get; set; } = "undefined";
         public string Email { get; set; } = "undefined";
         public string Password { get; set; }
+
+
+        public List<Booking> Bookings { get; set; }
+
 
         public Patient(string firstName, string lastName , string email, string password)
         {
@@ -24,6 +29,9 @@ namespace GPBookingSystem
             LastName = lastName;
             Email = email;
             Password = password;
+
+            Bookings = new List<Booking>() { new Booking(FirstName, LastName, new DateTime(1,1,1,1,1,1)), new Booking(FirstName, LastName, DateTime.Now), new Booking(FirstName, LastName, DateTime.Now) };
+
         }
         public bool VerifyPassword(string password)
         {

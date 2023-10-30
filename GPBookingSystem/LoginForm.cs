@@ -26,7 +26,8 @@ namespace GPBookingSystem
             if(system.AttemptLogin(EmailTextbox.Text, PasswordTextbox.Text))
             {
                 parentForm.Controls.Clear();
-                MainPage newPage = new MainPage();
+                MainPage newPage = new MainPage(system);
+
                 newPage.Dock = DockStyle.Fill;
                 parentForm.Controls.Add(newPage);
             }

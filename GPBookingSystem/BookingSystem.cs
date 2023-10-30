@@ -12,6 +12,7 @@ namespace GPBookingSystem
         private List<Patient> registeredPatients = new List<Patient>();
         public List<Patient> RegisteredPatients { get { return registeredPatients; } }
 
+        public Patient? LoggedIn { get; set; } = null;
 
         //Attempt to login to the system
         public bool AttemptLogin(string email, string password)
@@ -20,6 +21,7 @@ namespace GPBookingSystem
             {
                 if (registeredPatients[i].Email == email && registeredPatients[i].VerifyPassword(password))
                 {
+                    LoggedIn = registeredPatients[i];
                     return true;
                 }
             }

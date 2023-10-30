@@ -28,19 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(41, 46);
+            label1.Name = "label1";
+            label1.Size = new Size(74, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Bookings";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Enabled = false;
+            dataGridView1.Location = new Point(144, 14);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(309, 213);
+            dataGridView1.TabIndex = 1;
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumPurple;
-            this.Name = "MainPage";
-            this.Size = new System.Drawing.Size(541, 326);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumPurple;
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "MainPage";
+            Size = new Size(473, 244);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
+        private DataGridView dataGridView1;
     }
 }

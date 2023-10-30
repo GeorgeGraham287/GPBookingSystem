@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,15 @@ namespace GPBookingSystem
 {
     public partial class MainPage : UserControl
     {
-        public MainPage()
+        private BookingSystem _bookingSystem;
+        public MainPage(BookingSystem booking)
         {
+            _bookingSystem = booking;
             InitializeComponent();
+
+            dataGridView1.DataSource = _bookingSystem.LoggedIn.Bookings;
+
+
         }
     }
 }
