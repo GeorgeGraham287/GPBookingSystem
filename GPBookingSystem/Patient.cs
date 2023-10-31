@@ -30,7 +30,7 @@ namespace GPBookingSystem
             Email = email;
             Password = password;
 
-            Bookings = new List<Booking>() { new Booking(FirstName, LastName, new DateTime(1,1,1,1,1,1)), new Booking(FirstName, LastName, DateTime.Now), new Booking(FirstName, LastName, DateTime.Now) };
+            Bookings = new List<Booking>() { new Booking(FirstName, LastName, new DateTime(1,1,1,1,1,1), "GP"), new Booking(FirstName, LastName, DateTime.Now, "Hospital"), new Booking(FirstName, LastName, DateTime.Now, "K&C Hospital") };
 
         }
         public bool VerifyPassword(string password)
