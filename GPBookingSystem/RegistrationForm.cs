@@ -16,7 +16,6 @@ namespace GPBookingSystem
     public partial class RegistrationForm : UserControl
     {
         private Regex passwordValidationRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\w\W]{8,}$");
-        
 
         private string nameErrorMessage = ErrorMessages.NameErrorMessage;
         private string passwordErrorMessage = ErrorMessages.PasswordErrorMessage;
@@ -31,85 +30,84 @@ namespace GPBookingSystem
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             bool valid = true;
-            
-            string firstName = FirstNameTextbox.Text;
-            string secondName = SecondNameTextbox.Text;
-            string email = EmailTextbox.Text;
-            string password = PasswordTextbox.Text;
+            valid &= ValidateNotEmpty(FirstNameTextbox, nameErrorMessage);
+            valid &= ValidateNotEmpty(SecondNameTextbox, nameErrorMessage);
+            valid &= ValidatePassword(PasswordTextbox.Text);
+            valid &= ValidateEmail(EmailTextbox.Text);
 
-            //* refactor ?  
-            //Simple null check for names
-            if (FirstNameTextbox.Text == "")
+            if (valid)
             {
-                valid = SetError(FirstNameTextbox, nameErrorMessage);
+                RegisterPatient(FirstNameTextbox.Text, SecondNameTextbox.Text, EmailTextbox.Text, PasswordTextbox.Text);
+                DisplaySuccessMessage();
+            }
+        }
+
+        private bool ValidateNotEmpty(TextBox textbox, string errorMessage)
+        {
+            if (String.IsNullOrWhiteSpace(textbox.Text))
+            {
+                return SetError(textbox, errorMessage);
             }
             else
             {
-                errorProvider1.SetError(FirstNameTextbox, "");
+                errorProvider1.SetError(textbox, "");
+                return true;
             }
-            if (SecondNameTextbox.Text == "")
-            {
-                valid = SetError(SecondNameTextbox, nameErrorMessage);
-            }
-            else
-            {
-                errorProvider1.SetError(SecondNameTextbox, "");
-            }
+        }
 
-
-            //Password Validation
-            if (!passwordValidationRegex.Match(PasswordTextbox.Text).Success)
+        private bool ValidatePassword(string password)
+        {
+            if (!passwordValidationRegex.Match(password).Success)
             {
-                valid = SetError(PasswordTextbox, passwordErrorMessage);
+                return SetError(PasswordTextbox, passwordErrorMessage);
             }
             else
             {
                 errorProvider1.SetError(PasswordTextbox, "");
+                return true;
             }
+        }
 
-            //Email Validation
+        private bool ValidateEmail(string emailString)
+        {
+            if (String.IsNullOrWhiteSpace(emailString))
+            {
+                return SetError(EmailTextbox, emailErrorMessage);
+            }
             try
             {
-                string emailString = EmailTextbox.Text;
-                if(emailString != "")
-                {
-                    MailAddress mailAddress = new MailAddress(emailString);
-                    errorProvider1.SetError(EmailTextbox, "");
-                }
-                else
-                {
-                    valid = SetError(EmailTextbox, emailErrorMessage);
-                }
+                MailAddress mailAddress = new MailAddress(emailString);
+                errorProvider1.SetError(EmailTextbox, "");
+                return true;
             }
             catch (FormatException)
             {
                 Console.WriteLine("Email is not valid.");
-                valid = SetError(EmailTextbox, emailErrorMessage);
+                return SetError(EmailTextbox, emailErrorMessage);
             }
-
-            Console.WriteLine("hello?>");
-            //Debug.WriteLine(valid);
-            //Actually do registration
-            if (valid)
-            {
-                //Debug.WriteLine("User Registered");
-                Patient p = new Patient(firstName, secondName, email, password);
-                //-> setter method
-                booking.RegisteredPatients.Add(p);
-                Label l = new Label();
-                l.Text = "Success";
-                l.BackColor = Color.Chartreuse;
-                //RegisterButton.Location.X-l.Width-10 , RegisterButton.Location.Y
-                l.Location = new Point(RegisterButton.Location.X - l.Width - 10, RegisterButton.Location.Y);
-                this.Controls.Add(l);
-                
-            }
-            
-
         }
+
+        private void RegisterPatient(string firstName, string secondName, string email, string password)
+        {
+            Patient p = new Patient(firstName, secondName, email, password);
+            booking.RegisteredPatients.Add(p);
+        }
+
+        private void DisplaySuccessMessage()
+        {
+            Label l = new Label
+            {
+                Text = "Success",
+                BackColor = Color.Chartreuse
+            };
+            l.Location = new Point(RegisterButton.Location.X - l.Width - 10, RegisterButton.Location.Y);
+            this.Controls.Add(l);
+        }
+
         Form1 parentForm;
         BookingSystem booking;
-        public RegistrationForm(Form1 form,BookingSystem system)
+
+        public RegistrationForm(Form1 form, BookingSystem system)
         {
             booking = system;
             parentForm = form;
@@ -123,7 +121,7 @@ namespace GPBookingSystem
                 if (control is Panel)
                 {
                     Panel foundPanel = (Panel)control;
-                    LoginForm newPage = new LoginForm(parentForm,booking);
+                    LoginForm newPage = new LoginForm(parentForm, booking);
                     newPage.Dock = DockStyle.Fill;
                     foundPanel.Controls.Clear();
                     foundPanel.Controls.Add(newPage);
@@ -133,3 +131,4 @@ namespace GPBookingSystem
         }
     }
 }
+
