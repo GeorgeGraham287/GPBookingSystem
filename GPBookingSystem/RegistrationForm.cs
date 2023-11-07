@@ -122,7 +122,7 @@ namespace GPBookingSystem
             {
                 Text = "Registerd!",
                 ForeColor = Color.Green,
-                
+
             };
             successLabel.Location = new Point(RegisterButton.Location.X - successLabel.Width - 10, RegisterButton.Location.Y);
             successLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;

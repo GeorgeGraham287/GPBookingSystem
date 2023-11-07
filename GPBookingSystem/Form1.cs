@@ -17,6 +17,7 @@ namespace GPBookingSystem
             Control newPage = new LoginForm(this,new BookingSystem());
             newPage.Width = panel1.Width;
             newPage.Height = panel1.Height;
+            newPage.Dock = DockStyle.Fill;
             panel1.Controls.Add(newPage);
 
         }

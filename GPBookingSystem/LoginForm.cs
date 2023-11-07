@@ -23,7 +23,7 @@ namespace GPBookingSystem
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            if(system.AttemptLogin(EmailTextbox.Text, PasswordTextbox.Text))
+            if (system.AttemptLogin(EmailTextbox.Text, PasswordTextbox.Text))
             {
                 parentForm.Controls.Clear();
                 MainPage newPage = new MainPage(system);
@@ -36,7 +36,7 @@ namespace GPBookingSystem
                 errorProvider1.SetError(LoginButton, "Login Attempt Failed");
             }
 
-            
+
         }
 
         //Register link => navitage to register page
@@ -54,7 +54,7 @@ namespace GPBookingSystem
                     break; // Found the panel, exit the loop
                 }
             }
-            
+
         }
     }
 }

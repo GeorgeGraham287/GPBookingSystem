@@ -28,112 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.SecondNameLabel = new System.Windows.Forms.Label();
-            this.FirstNameLabel = new System.Windows.Forms.Label();
-            this.LoginButton = new System.Windows.Forms.Button();
-            this.PasswordTextbox = new System.Windows.Forms.TextBox();
-            this.EmailTextbox = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.RegisterLink = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            SecondNameLabel = new Label();
+            FirstNameLabel = new Label();
+            LoginButton = new Button();
+            PasswordTextbox = new TextBox();
+            EmailTextbox = new TextBox();
+            label1 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            RegisterLink = new Label();
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
+            SuspendLayout();
             // 
             // SecondNameLabel
             // 
-            this.SecondNameLabel.AutoSize = true;
-            this.SecondNameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.SecondNameLabel.Location = new System.Drawing.Point(31, 105);
-            this.SecondNameLabel.Name = "SecondNameLabel";
-            this.SecondNameLabel.Size = new System.Drawing.Size(76, 20);
-            this.SecondNameLabel.TabIndex = 23;
-            this.SecondNameLabel.Text = "Password";
+            SecondNameLabel.Anchor = AnchorStyles.None;
+            SecondNameLabel.AutoSize = true;
+            SecondNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            SecondNameLabel.Location = new Point(31, 103);
+            SecondNameLabel.Name = "SecondNameLabel";
+            SecondNameLabel.Size = new Size(101, 28);
+            SecondNameLabel.TabIndex = 23;
+            SecondNameLabel.Text = "Password";
             // 
             // FirstNameLabel
             // 
-            this.FirstNameLabel.AutoSize = true;
-            this.FirstNameLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.FirstNameLabel.Location = new System.Drawing.Point(31, 52);
-            this.FirstNameLabel.Name = "FirstNameLabel";
-            this.FirstNameLabel.Size = new System.Drawing.Size(47, 20);
-            this.FirstNameLabel.TabIndex = 22;
-            this.FirstNameLabel.Text = "Email";
+            FirstNameLabel.Anchor = AnchorStyles.None;
+            FirstNameLabel.AutoSize = true;
+            FirstNameLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            FirstNameLabel.Location = new Point(31, 20);
+            FirstNameLabel.Name = "FirstNameLabel";
+            FirstNameLabel.Size = new Size(64, 28);
+            FirstNameLabel.TabIndex = 22;
+            FirstNameLabel.Text = "Email";
             // 
             // LoginButton
             // 
-            this.LoginButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoginButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LoginButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.LoginButton.Location = new System.Drawing.Point(155, 236);
-            this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(94, 29);
-            this.LoginButton.TabIndex = 21;
-            this.LoginButton.Text = "Login";
-            this.LoginButton.UseVisualStyleBackColor = false;
-            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            LoginButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            LoginButton.BackColor = Color.FromArgb(128, 128, 255);
+            LoginButton.FlatStyle = FlatStyle.Flat;
+            LoginButton.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            LoginButton.ForeColor = SystemColors.ButtonHighlight;
+            LoginButton.Location = new Point(155, 236);
+            LoginButton.Name = "LoginButton";
+            LoginButton.Size = new Size(94, 29);
+            LoginButton.TabIndex = 21;
+            LoginButton.Text = "Login";
+            LoginButton.UseVisualStyleBackColor = false;
+            LoginButton.Click += LoginButton_Click;
             // 
             // PasswordTextbox
             // 
-            this.PasswordTextbox.Location = new System.Drawing.Point(31, 128);
-            this.PasswordTextbox.Name = "PasswordTextbox";
-            this.PasswordTextbox.PasswordChar = '#';
-            this.PasswordTextbox.Size = new System.Drawing.Size(233, 27);
-            this.PasswordTextbox.TabIndex = 19;
+            PasswordTextbox.Anchor = AnchorStyles.None;
+            PasswordTextbox.Location = new Point(31, 134);
+            PasswordTextbox.Multiline = true;
+            PasswordTextbox.Name = "PasswordTextbox";
+            PasswordTextbox.PasswordChar = '#';
+            PasswordTextbox.Size = new Size(233, 42);
+            PasswordTextbox.TabIndex = 19;
             // 
             // EmailTextbox
             // 
-            this.EmailTextbox.Location = new System.Drawing.Point(31, 75);
-            this.EmailTextbox.Name = "EmailTextbox";
-            this.EmailTextbox.Size = new System.Drawing.Size(233, 27);
-            this.EmailTextbox.TabIndex = 18;
+            EmailTextbox.Anchor = AnchorStyles.None;
+            EmailTextbox.Location = new Point(31, 51);
+            EmailTextbox.Multiline = true;
+            EmailTextbox.Name = "EmailTextbox";
+            EmailTextbox.Size = new Size(233, 39);
+            EmailTextbox.TabIndex = 18;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Login";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(46, 20);
+            label1.TabIndex = 24;
+            label1.Text = "Login";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // errorProvider1
             // 
-            this.errorProvider1.ContainerControl = this;
+            errorProvider1.ContainerControl = this;
             // 
             // RegisterLink
             // 
-            this.RegisterLink.AutoSize = true;
-            this.RegisterLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.RegisterLink.ForeColor = System.Drawing.Color.Blue;
-            this.RegisterLink.Location = new System.Drawing.Point(57, 158);
-            this.RegisterLink.Name = "RegisterLink";
-            this.RegisterLink.Size = new System.Drawing.Size(161, 20);
-            this.RegisterLink.TabIndex = 25;
-            this.RegisterLink.Text = "Register as new Patient";
-            this.RegisterLink.Click += new System.EventHandler(this.RegisterLink_Click);
+            RegisterLink.Anchor = AnchorStyles.Bottom;
+            RegisterLink.AutoSize = true;
+            RegisterLink.Cursor = Cursors.Hand;
+            RegisterLink.ForeColor = Color.Blue;
+            RegisterLink.Location = new Point(63, 191);
+            RegisterLink.Name = "RegisterLink";
+            RegisterLink.Size = new Size(161, 20);
+            RegisterLink.TabIndex = 25;
+            RegisterLink.Text = "Register as new Patient";
+            RegisterLink.Click += RegisterLink_Click;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.RegisterLink);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.SecondNameLabel);
-            this.Controls.Add(this.FirstNameLabel);
-            this.Controls.Add(this.LoginButton);
-            this.Controls.Add(this.PasswordTextbox);
-            this.Controls.Add(this.EmailTextbox);
-            this.Name = "LoginForm";
-            this.Size = new System.Drawing.Size(288, 285);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Transparent;
+            Controls.Add(RegisterLink);
+            Controls.Add(label1);
+            Controls.Add(SecondNameLabel);
+            Controls.Add(FirstNameLabel);
+            Controls.Add(LoginButton);
+            Controls.Add(PasswordTextbox);
+            Controls.Add(EmailTextbox);
+            Name = "LoginForm";
+            Size = new Size(288, 285);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
