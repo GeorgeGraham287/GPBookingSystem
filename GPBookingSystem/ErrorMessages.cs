@@ -8,13 +8,9 @@ namespace GPBookingSystem
 {
     public static class ErrorMessages
     {
-//#if DEBUG
-        //SRP
-        //=> error manager ? 
-        // multiple places error messages might be shown => general
-        public static string NameErrorMessage { get;  } = "Please Enter a Value";
-        public static string PasswordErrorMessage { get; } = "Invalid Password must have a Minimum of eight characters, with at least one letter and one number";
-        public static string EmailErrorMessage { get; } = "Invalid Email";
-//#endif
+        public static string NameErrorMessage { get; } = "Please enter a value.";
+        public static string PasswordErrorMessage { get; } = "Password must have a minimum of 8 characters, with at least one letter and one number.";
+        public static string ConfirmPasswordErrorMessage { get; } = "Passwords do not match.";
+        public static string EmailErrorMessage { get; } = "Please enter a valid email address.";
     }
 }

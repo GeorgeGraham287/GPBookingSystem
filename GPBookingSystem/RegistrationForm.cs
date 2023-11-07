@@ -21,6 +21,16 @@ namespace GPBookingSystem
         private string passwordErrorMessage = ErrorMessages.PasswordErrorMessage;
         private string emailErrorMessage = ErrorMessages.EmailErrorMessage;
 
+        Form1 parentForm;
+        BookingSystem booking;
+
+        public RegistrationForm(Form1 form, BookingSystem system)
+        {
+            InitializeComponent();
+            booking = system;
+            parentForm = form;
+        }
+
         private bool SetError(Control control, string errorMessage)
         {
             errorProvider1.SetError(control, errorMessage);
@@ -37,9 +47,23 @@ namespace GPBookingSystem
 
             if (valid)
             {
-                RegisterPatient(FirstNameTextbox.Text, SecondNameTextbox.Text, EmailTextbox.Text, PasswordTextbox.Text);
-                DisplaySuccessMessage();
+                // Before registering, check if the email is already used by another patient.
+                if (!EmailAlreadyExists(EmailTextbox.Text))
+                {
+                    RegisterPatient(FirstNameTextbox.Text, SecondNameTextbox.Text, EmailTextbox.Text, PasswordTextbox.Text);
+                    DisplaySuccessMessage();
+                }
+                else
+                {
+                    SetError(EmailTextbox, "Email already in use. Please use a different one.");
+                }
             }
+        }
+
+        // Checks if the email provided is already associated with a registered patient.
+        private bool EmailAlreadyExists(string email)
+        {
+            return booking.RegisteredPatients.Exists(p => p.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
         }
 
         private bool ValidateNotEmpty(TextBox textbox, string errorMessage)
@@ -68,50 +92,41 @@ namespace GPBookingSystem
             }
         }
 
-        private bool ValidateEmail(string emailString)
+        private bool ValidateEmail(string email)
         {
-            if (String.IsNullOrWhiteSpace(emailString))
+            if (String.IsNullOrWhiteSpace(email))
             {
                 return SetError(EmailTextbox, emailErrorMessage);
             }
             try
             {
-                MailAddress mailAddress = new MailAddress(emailString);
+                var mailAddress = new System.Net.Mail.MailAddress(email);
                 errorProvider1.SetError(EmailTextbox, "");
                 return true;
             }
             catch (FormatException)
             {
-                Console.WriteLine("Email is not valid.");
                 return SetError(EmailTextbox, emailErrorMessage);
             }
         }
 
         private void RegisterPatient(string firstName, string secondName, string email, string password)
         {
-            Patient p = new Patient(firstName, secondName, email, password);
-            booking.RegisteredPatients.Add(p);
+            var patient = new Patient(firstName, secondName, email, password);
+            booking.RegisteredPatients.Add(patient);
         }
 
         private void DisplaySuccessMessage()
         {
-            Label l = new Label
+            var successLabel = new Label
             {
-                Text = "Success",
-                BackColor = Color.Chartreuse
+                Text = "Registerd!",
+                ForeColor = Color.Green,
+                
             };
-            l.Location = new Point(RegisterButton.Location.X - l.Width - 10, RegisterButton.Location.Y);
-            this.Controls.Add(l);
-        }
-
-        Form1 parentForm;
-        BookingSystem booking;
-
-        public RegistrationForm(Form1 form, BookingSystem system)
-        {
-            booking = system;
-            parentForm = form;
-            InitializeComponent();
+            successLabel.Location = new Point(RegisterButton.Location.X - successLabel.Width - 10, RegisterButton.Location.Y);
+            successLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            Controls.Add(successLabel);
         }
 
         private void BackButton_Click(object sender, EventArgs e)

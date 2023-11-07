@@ -10,20 +10,17 @@ namespace GPBookingSystem
     public class BookingSystem
     {
         private List<Patient> registeredPatients = new List<Patient>();
-        public List<Patient> RegisteredPatients { get { return registeredPatients; } }
+        public List<Patient> RegisteredPatients => registeredPatients;
 
-        public Patient? LoggedIn { get; set; } = null;
+        public Patient? LoggedInPatient { get; private set; }
 
-        //Attempt to login to the system
         public bool AttemptLogin(string email, string password)
         {
-            for (int i=0; i<registeredPatients.Count; i++)
+            var patient = registeredPatients.FirstOrDefault(p => p.Email == email);
+            if (patient != null && patient.VerifyPassword(password))
             {
-                if (registeredPatients[i].Email == email && registeredPatients[i].VerifyPassword(password))
-                {
-                    LoggedIn = registeredPatients[i];
-                    return true;
-                }
+                LoggedInPatient = patient;
+                return true;
             }
             return false;
         }

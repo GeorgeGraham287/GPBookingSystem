@@ -19,7 +19,7 @@ namespace GPBookingSystem
             _bookingSystem = booking;
             InitializeComponent();
 
-            dataGridView1.DataSource = _bookingSystem.LoggedIn.Bookings;
+            dataGridView1.DataSource = _bookingSystem.LoggedInPatient.Bookings;
 
 
         }
