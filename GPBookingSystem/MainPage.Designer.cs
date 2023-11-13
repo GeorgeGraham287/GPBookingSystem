@@ -28,94 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            button1 = new Button();
+            button2 = new Button();
+            RescheduleButton = new Button();
+            BookingDatePicker = new DateTimePicker();
+            BookingTimePicker = new DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label1.Location = new System.Drawing.Point(47, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 32);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bookings";
+            label1.AutoSize = true;
+            label1.BackColor = Color.MediumSlateBlue;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.Desktop;
+            label1.Location = new Point(33, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(74, 21);
+            label1.TabIndex = 0;
+            label1.Text = "Bookings";
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GrayText;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.Location = new System.Drawing.Point(206, 24);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(441, 355);
-            this.dataGridView1.TabIndex = 1;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = SystemColors.GrayText;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(144, 32);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(309, 195);
+            dataGridView1.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(26, 342);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "View all doctors";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button1.Location = new Point(18, 205);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(111, 22);
+            button1.TabIndex = 2;
+            button1.Text = "View all doctors";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button2.Location = new System.Drawing.Point(26, 271);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 64);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Add a new booking";
-            this.button2.UseVisualStyleBackColor = true;
+            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            button2.Location = new Point(18, 163);
+            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Name = "button2";
+            button2.Size = new Size(111, 38);
+            button2.TabIndex = 3;
+            button2.Text = "Add a new booking";
+            button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // RescheduleButton
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button3.Location = new System.Drawing.Point(26, 228);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 36);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Reschedule";
-            this.button3.UseVisualStyleBackColor = true;
+            RescheduleButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            RescheduleButton.Location = new Point(18, 137);
+            RescheduleButton.Margin = new Padding(3, 2, 3, 2);
+            RescheduleButton.Name = "RescheduleButton";
+            RescheduleButton.Size = new Size(111, 22);
+            RescheduleButton.TabIndex = 4;
+            RescheduleButton.Text = "Reschedule";
+            RescheduleButton.UseVisualStyleBackColor = true;
+            RescheduleButton.Click += RescheduleButton_Click;
+            // 
+            // BookingDatePicker
+            // 
+            BookingDatePicker.Location = new Point(144, 3);
+            BookingDatePicker.Name = "BookingDatePicker";
+            BookingDatePicker.Size = new Size(165, 23);
+            BookingDatePicker.TabIndex = 5;
+            // 
+            // BookingTimePicker
+            // 
+            BookingTimePicker.Format = DateTimePickerFormat.Time;
+            BookingTimePicker.Location = new Point(315, 3);
+            BookingTimePicker.Name = "BookingTimePicker";
+            BookingTimePicker.ShowUpDown = true;
+            BookingTimePicker.Size = new Size(128, 23);
+            BookingTimePicker.TabIndex = 6;
             // 
             // MainPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "MainPage";
-            this.Size = new System.Drawing.Size(676, 406);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(128, 128, 255);
+            Controls.Add(BookingTimePicker);
+            Controls.Add(BookingDatePicker);
+            Controls.Add(RescheduleButton);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(dataGridView1);
+            Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "MainPage";
+            Size = new Size(473, 244);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -124,6 +142,8 @@
         private DataGridView dataGridView1;
         private Button button1;
         private Button button2;
-        private Button button3;
+        private Button RescheduleButton;
+        private DateTimePicker BookingDatePicker;
+        private DateTimePicker BookingTimePicker;
     }
 }
