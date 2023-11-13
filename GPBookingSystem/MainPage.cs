@@ -22,5 +22,12 @@ namespace GPBookingSystem
             dataGridView1.DataSource = _bookingSystem.LoggedInPatient.Bookings;
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            dataGridView1.DataSource = _bookingSystem.Doctors;
+            
+        }
     }
 }

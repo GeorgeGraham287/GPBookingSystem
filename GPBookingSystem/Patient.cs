@@ -17,6 +17,7 @@ namespace GPBookingSystem
 
         public List<Booking> Bookings { get; private set; }
 
+
         public Patient(string firstName, string lastName, string email, string password)
         {
             FirstName = firstName;
@@ -24,13 +25,15 @@ namespace GPBookingSystem
             Email = email;
             SetPassword(password);
 
-            Bookings = new List<Booking>() {
+            Bookings = new List<Booking>()
+            {
                 new Booking(firstName, lastName, DateTime.Now, "GP"),
                 new Booking(firstName, lastName, DateTime.Now, "Hospital"),
                 new Booking(firstName, lastName, DateTime.Now, "K&C Hospital")
             };
-        }
 
+        }
+        
         public void SetPassword(string password)
         {
             hashedPassword = HashPassword(password);
@@ -56,4 +59,5 @@ namespace GPBookingSystem
             return hashedInput == hashedPassword;
         }
     }
+
 }
