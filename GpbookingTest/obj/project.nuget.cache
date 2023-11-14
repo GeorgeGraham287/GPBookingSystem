@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "1lHwyVgFKOtq9KlO1hFYc/AToqlm1dIBeVQjFlA8L8ETKp3BXBmDgTG1z3ZzGGTdSlO4cw2lOeSKNl8VO0uc8g==",
-  "success": false,
+  "dgSpecHash": "RtzxEogIIbhBtk4MulGC714bZTiBIGIrpAURrvZecD5cS9xIQKcDtLO6uIZN62XOND11woURX/VcU1XB0oVrTw==",
+  "success": true,
   "projectFilePath": "C:\\Users\\alwin\\Source\\Repos\\GPBookingSystem\\GpbookingTest\\GpbookingTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alwin\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
@@ -94,15 +94,5 @@
     "C:\\Users\\alwin\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\alwin\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project GPBookingSystem is not compatible with net6.0 (.NETCoreApp,Version=v6.0). Project GPBookingSystem supports: net7.0-windows7.0 (.NETCoreApp,Version=v7.0)",
-      "libraryId": "GPBookingSystem",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }
