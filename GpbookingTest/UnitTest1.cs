@@ -9,7 +9,7 @@ namespace GpbookingTest
         {
             //BookingSystem 
             //create instance for registrationform and validatepassword
-            //one of the test to check for blank passwords (Alwin)
+            //one of the test to check for blank passworsds (Alwin)
         }
         
         [Fact]
