@@ -4,14 +4,30 @@ namespace GpbookingTest
 {
     public class UnitTest1
     {
+        //test for invalid password
         [Fact]
-        public void Test1()
+        public void ValidatePassword_InvalidPassword_ReturnsFalse()
         {
-            //BookingSystem 
-            //create instance for registrationform and validatepassword
-            //one of the test to check for blank passworsds (Alwin)
+            Form1 f = new Form1();
+            RegistrationForm form = new RegistrationForm(f, new BookingSystem());
+
+            bool result = form.ValidatePassword("password");
+
+            Assert.False(result);
         }
-        
+
+        //test for valid password
+        [Fact]
+        public void ValidatePassword_ValidPassword_ReturnsTrue()
+        {
+            Form1 f = new Form1();
+            RegistrationForm form = new RegistrationForm(f, new BookingSystem());
+
+            bool result = form.ValidatePassword("Password1");
+
+            Assert.True(result);
+        }
+
         [Fact]
         public void ValidateEmail_InvalidEmail_ReturnsFalse()
         {
