@@ -8,23 +8,23 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\alwin\\.nuget\\packages\\": {},
+    "C:\\Users\\bxy72\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alwin\\Source\\Repos\\GPBookingSystem\\GPBookingSystem\\GPBookingSystem.csproj",
+      "projectUniqueName": "C:\\Users\\bxy72\\Documents\\GitHub\\GPBookingSystem\\GPBookingSystem\\GPBookingSystem.csproj",
       "projectName": "GPBookingSystem",
-      "projectPath": "C:\\Users\\alwin\\Source\\Repos\\GPBookingSystem\\GPBookingSystem\\GPBookingSystem.csproj",
-      "packagesPath": "C:\\Users\\alwin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alwin\\Source\\Repos\\GPBookingSystem\\GPBookingSystem\\obj\\",
+      "projectPath": "C:\\Users\\bxy72\\Documents\\GitHub\\GPBookingSystem\\GPBookingSystem\\GPBookingSystem.csproj",
+      "packagesPath": "C:\\Users\\bxy72\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bxy72\\Documents\\GitHub\\GPBookingSystem\\GPBookingSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\alwin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bxy72\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -69,7 +69,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

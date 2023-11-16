@@ -66,7 +66,7 @@ namespace GPBookingSystem
             return booking.RegisteredPatients.Exists(p => p.Email.Equals(email, StringComparison.OrdinalIgnoreCase));
         }
 
-        private bool ValidateNotEmpty(TextBox textbox, string errorMessage)
+        public bool ValidateNotEmpty(TextBox textbox, string errorMessage)
         {
             if (String.IsNullOrWhiteSpace(textbox.Text))
             {
@@ -79,7 +79,7 @@ namespace GPBookingSystem
             }
         }
 
-        private bool ValidatePassword(string password)
+        public bool ValidatePassword(string password)
         {
             if (!passwordValidationRegex.Match(password).Success)
             {
@@ -92,7 +92,7 @@ namespace GPBookingSystem
             }
         }
 
-        private bool ValidateEmail(string email)
+        public bool ValidateEmail(string email)
         {
             if (String.IsNullOrWhiteSpace(email))
             {
@@ -110,7 +110,7 @@ namespace GPBookingSystem
             }
         }
 
-        private void RegisterPatient(string firstName, string secondName, string email, string password)
+        public void RegisterPatient(string firstName, string secondName, string email, string password)
         {
             var patient = new Patient(firstName, secondName, email, password);
             booking.RegisteredPatients.Add(patient);
