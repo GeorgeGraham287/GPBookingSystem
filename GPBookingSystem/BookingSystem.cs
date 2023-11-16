@@ -20,6 +20,7 @@ namespace GPBookingSystem
 
         public Patient? LoggedInPatient { get; private set; }
 
+        
         public BookingSystem()
         {
             doctors = doctorsForm.allDoctors;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,8 +16,13 @@ namespace GPBookingSystem
         public string Email { get; set; }
         private string hashedPassword;
 
-        public List<Booking> Bookings { get; private set; }
-
+        public List<Booking> Bookings { get; set; } = new List<Booking>();
+        public void AddBooking(Doctor doctorBookingWith , DateTime timeOfBooking,string location)
+        {
+            
+            Bookings.Add(new Booking(FirstName, LastName, DateTime.Now, location,doctorBookingWith.FullName));
+            
+        }
 
         public Patient(string firstName, string lastName, string email, string password)
         {
@@ -25,12 +31,9 @@ namespace GPBookingSystem
             Email = email;
             SetPassword(password);
 
-            Bookings = new List<Booking>()
-            {
-                new Booking(firstName, lastName, DateTime.Now, "GP"),
-                new Booking(firstName, lastName, DateTime.Now, "Hospital"),
-                new Booking(firstName, lastName, DateTime.Now, "K&C Hospital")
-            };
+            Bookings.Add(new Booking(firstName, lastName, DateTime.Now, "GP","Joe"));
+            Bookings.Add(new Booking(firstName, lastName, DateTime.Now, "Hospital", "Joe"));
+            Bookings.Add(new Booking(firstName, lastName, DateTime.Now, "K&C Hospital", "Joe"));
 
         }
         

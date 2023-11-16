@@ -12,13 +12,15 @@ namespace GPBookingSystem
         public string LastName { get; set; }
         public DateTime BookingTime { get; set; }
         public string Location { get; set; }
+        public string DoctorName { get; set; }
 
-        public Booking(string firstName, string lastName , DateTime bookingTime, string location)
+        public Booking(string firstName, string lastName , DateTime bookingTime, string location,string doctorName)
         {
             FirstName = firstName;
             LastName = lastName;
             BookingTime = bookingTime;
             Location = location;
+            DoctorName = doctorName;
         }
 
         
@@ -26,6 +28,7 @@ namespace GPBookingSystem
 
     public class Doctor
     {
+        public string FullName { get => DoctorsFirstName + " " + DoctorsLastName; }
         public string DoctorsFirstName { get; set; }
         public string DoctorsLastName { get; set; }
 
