@@ -5536,23 +5536,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alwin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\mail3\\.nuget\\packages\\": {},
+    "E:\\VS\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alwin\\Desktop\\GPbookingdasd\\GeorgeGraham287\\GPBookingSystem\\GpbookingTest\\GpbookingTest.csproj",
+      "projectUniqueName": "C:\\Users\\mail3\\Desktop\\gp\\GpbookingTest\\GpbookingTest.csproj",
       "projectName": "GpbookingTest",
-      "projectPath": "C:\\Users\\alwin\\Desktop\\GPbookingdasd\\GeorgeGraham287\\GPBookingSystem\\GpbookingTest\\GpbookingTest.csproj",
-      "packagesPath": "C:\\Users\\alwin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alwin\\Desktop\\GPbookingdasd\\GeorgeGraham287\\GPBookingSystem\\GpbookingTest\\obj\\",
+      "projectPath": "C:\\Users\\mail3\\Desktop\\gp\\GpbookingTest\\GpbookingTest.csproj",
+      "packagesPath": "C:\\Users\\mail3\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mail3\\Desktop\\gp\\GpbookingTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "E:\\VS\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\alwin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mail3\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5561,14 +5561,15 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\alwin\\Desktop\\GPbookingdasd\\GeorgeGraham287\\GPBookingSystem\\GPBookingSystem\\GPBookingSystem.csproj": {
-              "projectPath": "C:\\Users\\alwin\\Desktop\\GPbookingdasd\\GeorgeGraham287\\GPBookingSystem\\GPBookingSystem\\GPBookingSystem.csproj"
+            "C:\\Users\\mail3\\Desktop\\gp\\GPBookingSystem\\GPBookingSystem.csproj": {
+              "projectPath": "C:\\Users\\mail3\\Desktop\\gp\\GPBookingSystem\\GPBookingSystem.csproj"
             }
           }
         }
@@ -5620,7 +5621,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.404\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
